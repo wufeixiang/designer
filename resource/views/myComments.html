@@ -1,0 +1,34 @@
+<ion-view title="我的评论">
+	<ion-content>
+		<div class="bar bar-header item-input-inset">
+			<label class="item-input-wrapper"> <i class="icon ion-ios7-search placeholder-icon"></i>
+				<input ng-model="query" type="search" placeholder="找点什么...">
+			</label>
+			<button class="button button-clear">
+				搜索
+			</button>
+		</div>
+		<div class="noinfo" ng-show="list.length==0">
+			没有信息
+		</div>
+		<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()"></ion-refresher>
+		<ion-list>
+			<ion-item ng-repeat="item in list  | filter:query ">
+				<div class="item item-avatar">
+					<img src="resource/images/face.png" />
+					<h2>{{item.name}} <small>{{item.writetime}}  {{item.devicename}}</small></h2>
+					<p>
+						{{item.content}}
+					</p>
+				</div>
+			</ion-item>
+		</ion-list>
+		<ion-infinite-scroll
+		ng-if="moreDataCanBeLoaded()"
+		on-infinite="loadMore()"
+		distance="5%"
+		></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

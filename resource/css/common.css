@@ -1,0 +1,170 @@
+* {
+	font-family: "Microsoft YaHei", "微软雅黑"
+}
+.bg-index{
+	background: url(../images/bg.jpg) no-repeat center center;
+	background-size: cover;
+}
+.comment{
+	background: rgba(0,0,0,.5);
+}
+.modal {
+  width: 100% !important;
+  height: 100%;
+  top: 0 !important;
+  left: 0 !important;
+}
+.row-wrap {
+	display: flex !important;
+	/*display: -webkit-flex; 
+	flex-wrap: wrap !important;
+	-webkit-flex-wrap: wrap;
+	
+	-webkit-flex-flow :row wrap;
+	flex-direction: row; */
+	flex-flow: row wrap !important;
+	flex: 1;
+}
+h3 {
+	font-size: 20px;
+	color: #34302d;
+	font-weight: normal;
+	margin: 0;
+}
+img {
+	vertical-align: middle;
+}
+.font-grey {
+	color: #777
+}
+.text-center {
+	text-align: center
+}
+.pull-right {
+	float: right
+}
+.price {
+	color: red;
+}
+.nopadding {
+	padding: 0 !important;
+}
+.nomargin {
+	margin: 0 !important;
+}
+.desc {
+	font-size: 1em;
+	padding: 5px 10px !important;
+}
+.noinfo {
+	font-size: 30px;
+	text-align: center;
+	color: #ddd;
+	padding: 50px 0;
+}
+.content {
+	overflow: hidden;
+	width: 100%;
+}
+.border {
+	/*border: 1px solid #9b999a;
+	 border-radius: 10px;*/
+	/*box-shadow: 1px 1px 3px rgba(0,0,0,0.5);*/
+}
+.signIn {
+	text-align: center;
+	padding: 20px 0;
+	margin: 0 auto;
+	font-size: 20px;
+}
+.myInfo > p {
+	margin: 0;
+}
+.myInfo {
+	padding-left: 90px;
+}
+.my-avatar {
+	position: absolute;
+	top: 16px;
+	left: 16px;
+	max-width: 64px;
+	max-height: 64px;
+	width: 100%;
+	border-radius: 4px;
+}
+.col-md-4, .col-md-8 {
+	position: relative;
+}
+.col-md-4 {
+	padding: 20px;
+	width: 50%;
+}
+.col-md-8 {
+	margin: 10px 0 0 0;
+}
+.user {
+	padding-left: 150px;
+	height: 150px;
+	width: 100%;
+}
+.user > .face {
+	/*border-radius:50%;*/
+	box-shadow: 1px 0 4px rgba(0,0,0,.3);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.u_tips {
+	font-size: 30px;
+	color: #939393;
+}
+.username {
+	color: #01377d;
+	margin: 0 0 40px 0;
+	font-size: 40px;
+}
+hr {
+	border: 1px dashed #ddd;
+}
+.logo {
+	position: absolute;
+	right: 10px;
+	bottom: 2px;
+}
+.clear {
+	clear: both;
+}
+.rank {
+	width: 100%;
+}
+.button-page {
+	border: 0;
+}
+/*推荐方案显示图标*/
+.picon {
+	z-index: 2;
+	width: 66px;
+	height: 60px;
+	position: absolute;
+	right: 2px;
+	top: 5px;
+	background: url(../images/plan_icons.png) no-repeat 100px 0
+}
+.chengjiao {
+	background-position: 0 0
+}
+.pingjia_1 {
+	background-position: 0 -60px
+}
+.pingjia_5 {
+	background-position: 0 -120px
+}
+.renqi {
+	background-position: 0 -180px
+}
+.jingjian {
+	background-position: 0 -240px
+}
+.delete-star {
+	padding: 28px 12px 0 !important;
+}

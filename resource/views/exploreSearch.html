@@ -1,0 +1,42 @@
+<ion-view title="{{list.length}}个云设计方案">
+	<ion-content>
+		<ion-list>
+			<div class="row row-wrap">
+				<div ng-repeat="item in list" class="col col-50">
+					<div class="item-image">
+						<img class="full-image" ng-src="{{item.xg_file}}">
+					</div>
+					<div class="item item-body">
+						<table width="100%;">
+							<tr width="50%;">
+								<td>匹配度：{{item.fMatchValue2}}</td>
+								<td>省份：{{item.ip_area}}</td>
+							</tr>
+							<tr width="50%;">
+								<td>含有{{item.subplans2}}个方案</td>
+								<td class="price">价格：￥{{item.s_price}}</td>
+							</tr>
+							<tr width="50%;">
+								<td>已有{{item.val_c}次应用</td>
+								<td>风格：{{item.style2|get_room_style}}</td>
+							</tr>
+						</table>
+					</div>
+					<div class="item tabs tabs-secondary tabs-icon-left">
+						<a class="tab-item" ng-click="setPlanGood(item)"> <i class="icon ion-thumbsup"></i> {{item.good_cnt}} </a>
+						<a ng-href="#/tab/exploreSearch/{{item.CloudID}}" class="tab-item" > <i class="icon ion-search"></i> 相似 </a>
+						<a ng-hide="item.favor" class="tab-item" ng-click="setPlanFavor(item)"> <i class="icon ion-ios7-heart-outline"></i> 收藏 </a>
+						<a ng-if="item.favor" class="tab-item"><i class="icon ion-heart balanced"></i> 已收藏 </a>
+					</div>
+				</div>
+			</div>
+			<div class="button-bar">
+				<a class="button button-light">上一页</a>
+				<a class="button button-light">下一页</a>
+			</div>
+		</ion-list>
+		<div class="noinfo" ng-if="noresult">
+			没有找到匹配方案
+		</div>
+	</ion-content>
+</ion-view>

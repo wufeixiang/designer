@@ -1,0 +1,60 @@
+<ion-view title="{{type | getRoomType }}">
+	<ion-nav-buttons side="right">
+		<a ng-click="popover.show($event)" class="button button-icon icon ion-ios7-more"></a>
+	</ion-nav-buttons>
+	<ion-content>
+		<ion-list>
+			<div ng-repeat="item in list" class="card">
+				<div class="item-image">
+					<a href="#/tab/plan/{{item.CloudID}}"> <img class="full-image" ng-src="{{item.xg_file}}"> </a>
+					<div class="picon pingjia_{{item.s_pingjia_dengji}}"></div>
+				</div>
+				<div class="item item-body desc">
+					<p class="nopadding">
+						风格：{{item.style}}
+						<br />
+						省份：{{item.ip_area}}
+						<br />
+					</p>
+				</div>
+				<div class="item tabs tabs-secondary tabs-icon-left">
+					<a class="tab-item" ng-click="setPlanGood(item)"> <i class="icon ion-thumbsup"></i> {{item.good_cnt}} </a>
+					<!-- <a ng-href="#/tab/exploreSearch/{{item.CloudID}}" class="tab-item" > <i class="icon ion-search"></i> 云设计 </a> -->
+					<a class="tab-item" href="#/tab/plan/{{item.CloudID}}"> <i class="icon ion-chatbox"></i> {{item.comment_cnt}} </a>
+					<a ng-hide="item.favor" class="tab-item" ng-click="setPlanFavor(item)"> <i class="icon ion-ios7-heart-outline"></i> </a>
+					<a ng-if="item.favor" class="tab-item"><i class="icon ion-heart balanced"></i> </a>
+				</div>
+			</div>
+		</ion-list>
+		<ion-infinite-scroll
+		ng-if="moreDataCanBeLoaded()"
+		on-infinite="loadMore()"
+		distance="5%"
+		></ion-infinite-scroll>
+	</ion-content>
+</ion-view>
+<script id="templates/popover.html" type="text/ng-template">
+	<ion-popover-view>
+	<ion-content>
+	<div class="list">
+	<a class="item" ng-click="setStyle('里昂春天')">里昂春天</a>
+	<a class="item" ng-click="setStyle('北美枫情')">北美枫情</a>
+	<a class="item" ng-click="setStyle('米兰剪影')">米兰剪影</a>
+	<a class="item" ng-click="setStyle('芭堤雅')">芭堤雅</a>
+	<a class="item" ng-click="setStyle('北欧阳光')">北欧阳光</a>
+	<a class="item" ng-click="setStyle('丹麦本色')">丹麦本色</a>
+	<a class="item" ng-click="setStyle('丹麦本色Ⅱ')">丹麦本色Ⅱ</a>
+	<a class="item" ng-click="setStyle('德国森林')">德国森林</a>
+	<a class="item" ng-click="setStyle('东京恋曲')">东京恋曲</a>
+	<a class="item" ng-click="setStyle('加州梦')">加州梦</a>
+	<a class="item" ng-click="setStyle('卡罗摩卡')">卡罗摩卡</a>
+	<a class="item" ng-click="setStyle('挪威月色')">挪威月色</a>
+	<a class="item" ng-click="setStyle('诺曼红影')">诺曼红影</a>
+	<a class="item" ng-click="setStyle('首尔之缤')">首尔之缤</a>
+	<a class="item" ng-click="setStyle('新古典')">新古典</a>
+	<a class="item" ng-click="setStyle('英伦印象')">英伦印象</a>
+	<a class="item" ng-click="setStyle('中国韵')">中国韵</a>
+	</div>
+	</ion-content>
+	</ion-popover-view>
+</script>

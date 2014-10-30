@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<title>设计岛</title>
+
+		<link href="resource/lib/ionic/css/ionic.css" rel="stylesheet">
+		<link href="resource/css/common.css" rel="stylesheet">
+		<!-- ionic/angularjs js -->
+		<script src="resource/lib/ionic/js/ionic.bundle.js"></script>
+		<!-- cordova script (this will be a 404 during development) -->
+		<script src="cordova.js"></script>
+		<script>
+			var _userInfo = {
+				"username" : "ydkhd",
+				"name" : "移动客户端",
+				"brand" : '{$data.brand}',
+				"token" : "{$data.token}",
+				"deviceuid" : "{$data.deviceuid}",
+				"devicename" : "{$data.devicename}"
+			};
+		</script>
+		<script src="resource/js/common/common.js"></script>
+		<script src="resource/js/app.js"></script>
+		<script src="resource/js/controllers.js"></script>
+		<script src="resource/js/services/service.js"></script>
+		<script src="resource/js/filters/filters.js"></script>
+	</head>
+
+	<body ng-app="starter">
+		<ion-nav-view></ion-nav-view>
+	</body>
+</html>

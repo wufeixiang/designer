@@ -1,0 +1,20 @@
+<ion-view title="方案榜">
+	<ion-content>
+		<div class="list">
+			<div class="item item-divider">
+				<p class="font-grey">
+					闻见广则聪明辟，胜友之而学易成 —— 魏源
+				</p>
+			</div>
+			<ion-refresher
+			pulling-text="下拉刷新..."
+			on-refresh="doRefresh()"></ion-refresher>
+			<a ng-repeat="item in list" ng-href="#/tab/user/{{item.username}}" class="item item-avatar item-icon-left">
+				 <img ng-src="{{item.face}}" /> 
+				 <h2>{{item.name}}</h2>
+			<p>
+				好评方案数：{{item.cnt_plans_good}}
+			</p> </a>
+		</div>
+	</ion-content>
+</ion-view>

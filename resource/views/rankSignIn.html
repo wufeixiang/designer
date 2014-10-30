@@ -1,0 +1,18 @@
+<ion-view title="签到榜">
+	<ion-content>
+		<div class="list">
+			<div class="item item-divider">
+				<p class="font-grey">
+					耐心是一切聪明才智的基础 —— 柏拉图
+				</p>
+			</div>
+			<a ng-repeat="item in list" href="#/tab/user/{{item.username}}" class="rankLevel item item-avatar item-icon-left"> <img ng-src="{{item.face}}" /> <h2>{{item.name}}</h2>
+			<p>
+				连续签到  <span class="assertive">{{item.signdays}}</span> 天
+			</p> </a>
+		</div>
+		<div class="noinfo" ng-show="noData">
+			抢沙发●▽●
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,15 @@
+<ion-view title="经验榜">
+	<ion-content>
+		<div class="list">
+			<div class="item item-divider">
+				<p class="font-grey">
+					谁有进取的意志，谁就干得成 —— 罗曼·罗兰
+				</p>
+			</div>
+			<a ng-repeat="item in list" ng-href="#/tab/user/{{item.username}}" class="rankLevel item item-avatar item-icon-left"> <img ng-src="{{item.face}}" /> <h2>{{item.name}}</h2>
+			<p>
+				经验：{{item.experience}}
+			</p> </a>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,32 @@
+<ion-view title="热评榜">
+	<ion-content>
+		<div class="item item-divider">
+			<p class="font-grey">
+				实践出真知,讨论见真理，一起来吧！ ::>_<::
+			</p>
+		</div>
+		<ion-refresher
+		pulling-text="下拉刷新..."
+		on-refresh="doRefresh()"></ion-refresher>
+		<div ng-repeat="item in list" class="card">
+			<div class="item-image">
+				<a href="#/tab/plan/{{item.CloudID}}"><img class="full-image" ng-src="{{item.xg_file}}"></a>
+			</div>
+			<div class="item item-body desc">
+				<p class="nopadding">
+					风格：{{item.style}}
+					<br />
+					省份：{{item.ip_area}}
+					<br />
+				</p>
+			</div>
+
+			<div class="item tabs tabs-secondary tabs-icon-left">
+				<a class="tab-item" ng-click="setPlanGood(item)"> <i class="icon ion-thumbsup"></i> {{item.good_cnt}} </a>
+				<a class="tab-item" href="#/tab/indexDetail/{{item.CloudID}}"> <i class="icon ion-chatbox"></i> {{item.comment_cnt}} </a>
+				<a ng-hide="item.favor" class="tab-item" ng-click="setPlanFavor(item)"> <i class="icon ion-ios7-heart-outline"></i> 收藏 </a>
+				<a ng-if="item.favor" class="tab-item"><i class="icon ion-heart balanced"></i> 已收藏 </a>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

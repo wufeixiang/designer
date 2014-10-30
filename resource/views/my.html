@@ -1,0 +1,47 @@
+<ion-view title="个人中心">
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+	<ion-content>
+		<a ng-href="#/tab/user/{{myInfo.username}}"  class="item myInfo"> <img class="my-avatar" ng-src="{{myInfo.face}}" /> <h2>{{myInfo.name}}</h2>
+		<p>
+			<strong>&gt;</strong> 等级：<span class="assertive">{{myInfo.level}}</span>
+		</p>
+		<p>
+			<strong>&gt;</strong> 连续签到 <span class="assertive">{{myInfo.signInCount}}</span> 天
+		</p> </a>
+		<div ng-show="!isSignIn" ng-click="signIn()" class="signIn">
+			<i class="icon ion-ios7-compose-outline"></i> 签到
+		</div>
+		<div ng-show="isSignIn" class="signIn">
+			<i class="icon ion-ios7-compose-outline"></i> 已签到
+		</div>
+
+		<div class="list">
+			<a class="item item-icon-left" ng-href="#/tab/user/{{myInfo.username}}"> <i class="icon ion-ios7-home-outline"></i> 我的作品 </a>
+			<a class="item item-icon-left" href="#/tab/myStar"> <i class="icon ion-ios7-star-outline"></i> 我的关注<span class="badge badge-assertive">{{myCount.starCount}}</span></a>
+
+			<a class="item item-icon-left" href="#/tab/myFavor"> <i class="icon ion-ios7-heart-outline"></i> 我的收藏</a>
+
+			<a class="item item-icon-left" href="#/tab/myResource"> <i class="icon ion-ios7-cloud-download-outline"></i> 量尺宝照片 </a>
+
+			<a class="item item-icon-left" href="#/tab/myComments"> <i class="icon ion-ios7-mic-outline"></i> 我的评论 </a>
+
+			<a class="item item-icon-left" href="#/tab/myMessage"> <i class="icon ion-ios7-chatbubble-outline"></i> 我的消息 <span class="badge badge-assertive">{{myInfo.newsCount}} new</span> </a>
+
+			<!--System Config-->
+			<!--
+			<div class="item item-divider">
+			系统
+			</div>
+			<a class="item item-icon-left" href="#/tab/mySetting"> <i class="icon ion-ios7-person-outline"></i> 账号管理</a>
+
+			<a class="item item-icon-left"> <i class="icon ion-ios7-information-outline"></i> 更新记录 <span class="badge badge-assertive"> 1.0 </span> </a>
+
+			<a class="item item-icon-left" href="#/tab/about"> <i class="icon ion-ios7-analytics-outline"></i> 关于软件 </a>
+
+			<a class="item item-icon-left item-icon-right" href="#/tab/feed"> <i class="icon ion-ios7-chatbubble-outline"></i> 联系我们 <i class="icon ion-ios7-arrow-thin-right"></i> </a>
+			-->
+		</div>
+	</ion-content>
+</ion-view>

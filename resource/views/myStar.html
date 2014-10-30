@@ -1,0 +1,14 @@
+<ion-view title="我的关注">
+	<ion-content>
+		<ion-list>
+			<ion-item ng-repeat="item in list" ng-href="#/tab/user/{{item.username}}" class="item item-avatar">
+				<img ng-src="{{item.face}}" />
+				<h2>{{item.name}}</h2>
+				<p>
+					经验：<span class="price">{{item.level}}</span>
+				</p>
+				<ion-option-button class="delete-star button button-assertive ion-minus" ng-click="delStar(item)"></ion-option-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
